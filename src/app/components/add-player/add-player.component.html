@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="assets/logo.png" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        AJOUTER UN JOUEUR
+    </div>
+    <form class="p-3 mt-3"  #validForm="ngForm" (ngSubmit)="onSubmit()">
+       
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="url" name="photo" #url="ngModel" id="photo" placeholder="url" [(ngModel)]="addPlayer.image">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="text" name="poste" #poste="ngModel" id="poste" placeholder="Poste"  [(ngModel)]="addPlayer.poste">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="text" name="nom" id="nom" #nom="ngModel" placeholder="nom"  [(ngModel)]="addPlayer.nom">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="text" name="prenom" #prenom ="ngModel" id="prenom" placeholder="prenom"  [(ngModel)]="addPlayer.prenom">
+        </div>
+        <button class="btn mt-3" type="submit" [disabled]="!validForm.valid">Valider</button>
+    </form>
+</div>

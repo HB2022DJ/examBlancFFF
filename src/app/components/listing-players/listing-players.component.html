@@ -1,0 +1,33 @@
+<div class="container mt-5  border border-2 border-primary rounded">
+    
+    <div class="text-center"><button class="btn btn-primary px-2" *ngIf="players.length<=22" [routerLink]= "['/add']"><fa-icon class="px-2"  [icon]="faUser"></fa-icon>ajouter un joueur</button></div>
+    
+    <div class="table-responsive">
+    <table class="table table-responsive table-borderless">
+        
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" width="5%">#</th>
+          <th scope="col" width="15%">Photo</th>
+          <th scope="col" width="15%">Poste</th>
+          <th scope="col" width="15%">Nom</th>
+          <th scope="col" width="15%">Prenom</th>
+          <th scope="col" class="text-end" width="15%"><span>Action</span></th>
+        </tr>
+      </thead>
+  <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{player.id}}</td>
+      <td><img src="{{player.image}}" alt="player"></td>
+      <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">{{player.poste}}</span></td>
+      <td>{{player.nom}}</td>
+      <td>{{player.prenom}}</td>
+      <td class="text-end"><span class="fw-bolder"><button *ngIf="player.id" class="btn btn-primary mb-2" (click)="deletePlayer(player.id)" ><fa-icon [icon]="fadelete"></fa-icon></button></span> <i class="fa fa-ellipsis-h  ms-2"></i>
+     <span class="fw-bolder"><button class="btn btn-primary mb-2"  [routerLink]= "['/detail', player.id]"><fa-icon [icon]="faInfo"></fa-icon></button></span> <i class="fa fa-ellipsis-h  ms-2"></i></td>
+    </tr>
+  </tbody>
+</table>
+  
+  </div>
+    
+</div>

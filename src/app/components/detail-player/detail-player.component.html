@@ -1,0 +1,19 @@
+
+
+<div class="card-1 mx-auto">
+    
+    <span>
+        <img class= "photo" src="{{player.image}}" alt="">
+     
+    </span>
+</div>
+
+<div class="card">
+    <div class="card-header text-center">
+      <h1>{{player.nom}} {{player.prenom}}</h1>
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">{{player.poste}}</h5>
+      <a [routerLink]="['/']" class="btn btn-primary"><fa-icon [icon]="faBack"></fa-icon></a>
+    </div>
+  </div>
